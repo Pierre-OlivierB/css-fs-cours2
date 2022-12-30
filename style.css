@@ -79,3 +79,19 @@ h1 {
     padding: 5px;
     text-align: center;
 }
+
+p {
+    line-height: 26px;
+    margin: 20px 0;
+    /*chrome only*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-align: left;
+}
+
+p::selection {
+    background: var(--color1);
+    color: var(--color4);
+}
