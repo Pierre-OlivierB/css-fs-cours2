@@ -17,3 +17,6 @@ https://cssgradient.io/
 
 picker
 https://webgradients.com/
+
+Filter:
+https://cssgenerator.org/filter-css-generator.html
