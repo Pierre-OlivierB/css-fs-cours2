@@ -1,9 +1,48 @@
+:root {
+    --color1: hsl(32, 100%, 75%);
+    --color2: hsl(151, 24%, 60%);
+    --color3: hsl(196, 77%, 45%);
+    --color4: hsl(200, 80%, 20%);
+    /* --color5: hsl(200, 10%, 30%); */
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     /* background: red; */
+    background: url(./assets/img/photo-paysage.png) center/cover;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 50px);
+    padding: 20px 20px 6px;
+    box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    /*caution with can i use : firefox issues*/
+    backdrop-filter: blur(5px);
+}
+
+.card::before {
+    content: '\2605';
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-size: 2.4rem;
+    /*1rem = 16px*/
+}
+
+h1 {
+    margin-bottom: 24px;
 }
