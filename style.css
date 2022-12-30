@@ -46,3 +46,36 @@ body {
 h1 {
     margin-bottom: 24px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.polygon-container {
+    filter: drop-shadow(-1px 16px 3px var(--color3));
+    /*Parent should be in grid*/
+    place-self: center left;
+}
+
+.polygon {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 50%, var(--color3) 100%);
+    height: 100px;
+    width: 100px;
+    /* Indescriptible form so : caution ! Use : shadow from parents*/
+    /* box-shadow: 5px 5px 5px red; */
+}
+
+.polygon::after {
+    content: 'Un texte';
+    position: absolute;
+    color: var(--color2);
+    background: var(--color4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(315deg);
+    width: 90px;
+    padding: 5px;
+    text-align: center;
+}
