@@ -1,22 +1,33 @@
 # css-fs-cours2
 
-with from scratch
+## with from scratch
 
-colors:
+### colors:
+
 coolors.co
 
-Symbols:
+### Symbols:
+
 https://www.toptal.com/designers/htmlarrows/symbols/
 
-Polygon:
+### Polygon:
+
 https://bennettfeely.com/clippy/
 
-Gradient :
-tools
+### Gradient :
+
+#### tools
+
 https://cssgradient.io/
 
-picker
+#### picker
+
 https://webgradients.com/
 
-Filter:
+### Filter:
+
 https://cssgenerator.org/filter-css-generator.html
+
+### remove bg:
+
+https://www.remove.bg/fr

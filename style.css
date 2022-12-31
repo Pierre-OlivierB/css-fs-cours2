@@ -22,6 +22,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    /*disable scrolls apparition with animation spaceship*/
+    overflow: hidden;
 }
 
 .card {
@@ -45,7 +47,30 @@ body {
 
 h1 {
     margin-bottom: 24px;
+    position: relative;
 }
+
+/*Preparation animation:*/
+h1::after {
+    content: '';
+    position: absolute;
+    background: var(--color2);
+    height: 1px;
+    width: 100%;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    animation: h1anim 5s ease-in-out forwards;
+    transform-origin: left;
+}
+
+@keyframes h1anim {
+    to {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/*End preparation*/
 
 .grid-container {
     display: grid;
@@ -100,6 +125,7 @@ p::selection {
     display: flex;
     justify-content: space-around;
     margin: 20px 0 30px;
+    perspective: 40px;
 }
 
 input[type="checkbox"] {
@@ -127,6 +153,42 @@ label {
     transition: 0.2s;
     user-select: none;
 }
+
+label:first-of-type:hover {
+    animation: label1 2s infinite linear;
+}
+
+@keyframes label1 {
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*Animation part 2 and see chackbox-container*/
+label:nth-child(4):hover {
+    animation: label2 3s infinite linear;
+}
+
+/*3D : Don't forget perspective on parent, here on checkbox-container*/
+@keyframes label2 {
+    33% {
+        transform: translateZ(30px)
+    }
+
+    66% {
+        transform: translateZ(-40px)
+    }
+
+    100% {
+        transform: translateZ(0)
+    }
+}
+
+/*en anim2*/
 
 .e-mail {
     text-align: center;
@@ -187,7 +249,7 @@ button:hover+a,
 a:hover {
     opacity: 1;
     transform: translateY(0);
-
+    visibility: visible;
 }
 
 a {
@@ -196,10 +258,88 @@ a {
     text-align: center;
     display: block;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(20px);
     transition: 0.3s;
 }
 
 a:visited {
     color: var(--color3);
+}
+
+/*Spaceship with animation*/
+img {
+    height: 60px;
+    position: absolute;
+    filter: drop-shadow(0px 6px 3px var(--color2));
+    z-index: -1;
+    animation: spaceship 15s infinite linear;
+}
+
+@keyframes spaceship {
+    0% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
+
+    10% {
+        top: 6%;
+        left: 30%;
+        transform: rotate(130deg);
+    }
+
+    20% {
+        top: 9%;
+        left: 60%;
+        transform: rotate(25deg);
+    }
+
+    30% {
+        top: 0%;
+        left: 80%;
+        transform: rotate(90deg);
+    }
+
+    40% {
+        top: 20%;
+        left: 120%;
+        transform: rotate(135deg);
+    }
+
+    50% {
+        top: 50%;
+        left: 80%;
+        transform: rotate(160deg);
+    }
+
+    60% {
+        top: 90%;
+        left: 90%;
+        transform: rotate(230deg);
+    }
+
+    70% {
+        top: 110%;
+        left: 50%;
+        transform: rotate(250deg);
+    }
+
+    80% {
+        top: 85%;
+        left: 30%;
+        transform: rotate(290deg);
+    }
+
+    90% {
+        top: 50%;
+        left: 15%;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
 }
