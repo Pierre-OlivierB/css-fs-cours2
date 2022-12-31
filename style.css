@@ -163,7 +163,7 @@ input[type="text"]::placeholder {
 button {
     cursor: pointer;
     background: var(--color2);
-    border: none;
+    border: 2px solid transparent;
     font-size: 1.3rem;
     padding: 10px 20px;
     border-radius: 200px;
@@ -172,8 +172,22 @@ button {
     transition: 0.5s;
 }
 
+button:active {
+    transform: scale(1.2);
+    background: var(--color4);
+    color: var(--color3);
+    border: 2px solid var(--color3);
+}
+
 button:hover {
     letter-spacing: 3px;
+}
+
+button:hover+a,
+a:hover {
+    opacity: 1;
+    transform: translateY(0);
+
 }
 
 a {
@@ -181,6 +195,9 @@ a {
     /* text-decoration: none; */
     text-align: center;
     display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
 }
 
 a:visited {
